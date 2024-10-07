@@ -17,29 +17,17 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -59,4 +47,43 @@ class DefaultFirebaseOptions {
     projectId: 'fir-messagingpoc-a2170',
     storageBucket: 'fir-messagingpoc-a2170.appspot.com',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyCa18IvNT8TDT4twplqaQkM70X46j-oXxk',
+    appId: '1:562310470354:web:d7bbdf97564ba2cd616b0b',
+    messagingSenderId: '562310470354',
+    projectId: 'fir-messagingpoc-a2170',
+    authDomain: 'fir-messagingpoc-a2170.firebaseapp.com',
+    storageBucket: 'fir-messagingpoc-a2170.appspot.com',
+    measurementId: 'G-YNNSGMSPNW',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyB00z-NSS-G0Xc19i2BuGXFNi1NDl2BxYk',
+    appId: '1:562310470354:ios:0f388b349d41813c616b0b',
+    messagingSenderId: '562310470354',
+    projectId: 'fir-messagingpoc-a2170',
+    storageBucket: 'fir-messagingpoc-a2170.appspot.com',
+    iosBundleId: 'com.example.firebaseMessagingPoc',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyB00z-NSS-G0Xc19i2BuGXFNi1NDl2BxYk',
+    appId: '1:562310470354:ios:0f388b349d41813c616b0b',
+    messagingSenderId: '562310470354',
+    projectId: 'fir-messagingpoc-a2170',
+    storageBucket: 'fir-messagingpoc-a2170.appspot.com',
+    iosBundleId: 'com.example.firebaseMessagingPoc',
+  );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyCa18IvNT8TDT4twplqaQkM70X46j-oXxk',
+    appId: '1:562310470354:web:2362806bf01f0787616b0b',
+    messagingSenderId: '562310470354',
+    projectId: 'fir-messagingpoc-a2170',
+    authDomain: 'fir-messagingpoc-a2170.firebaseapp.com',
+    storageBucket: 'fir-messagingpoc-a2170.appspot.com',
+    measurementId: 'G-EDRFZWHFE6',
+  );
+
 }
