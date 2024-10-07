@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "562310470354",
+    "project_id": "fir-messagingpoc-a2170",
+    "storage_bucket": "fir-messagingpoc-a2170.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:562310470354:android:b8a162b926a2ac4a616b0b",
+        "android_client_info": {
+          "package_name": "com.example.firebase_messaging_poc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3KwzPI_wVBfvOdvXjdVBAH2jxn_riOAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
