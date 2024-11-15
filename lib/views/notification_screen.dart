@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../viewmodels/notification_viewmodel.dart';
 
+// This class represents a stateless widget that displays a notification screen
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
 

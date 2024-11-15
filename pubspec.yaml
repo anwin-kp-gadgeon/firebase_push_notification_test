@@ -1,5 +1,11 @@
 name: firebase_messaging_poc
-description: "A new Flutter project."
+description: >
+  Just a single short paragraph. 
+  This Flutter app is a practical tool for testing Firebase push notifications, 
+  offering developers a hands-on experience with real-time notifications, 
+  FCM token management, and provider-based state management, all within a 
+  clean and user-friendly interface.
+
 publish_to: 'none'
 version: 0.1.0
 
@@ -12,7 +18,6 @@ dependencies:
   firebase_core: ^3.6.0
   firebase_messaging: ^15.1.3
   provider: ^6.1.2
-  firebase_analytics: ^11.3.3
   flutter_local_notifications: ^17.2.3
   permission_handler: ^11.3.1
   device_info_plus: ^10.1.2

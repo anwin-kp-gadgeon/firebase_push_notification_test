@@ -10,7 +10,7 @@ class NotificationService {
       FlutterLocalNotificationsPlugin();
 
   Future<void> initialize() async {
-    // Request permission on Android (API 33+) and iOS
+    // Request notification permission on Android (API 33+) and iOS
     await _requestPermission();
 
     // Initialize local notifications
@@ -22,10 +22,10 @@ class NotificationService {
 
     await flutterLocalNotificationsPlugin.initialize(initializationSettings);
 
-    // Create notification channel
+    // Create notification channel for Android
     await createNotificationChannel();
 
-    // Setup message listeners
+    // Setup message listeners for user interactions
     setupInteractedMessage();
   }
 
@@ -48,32 +48,12 @@ class NotificationService {
   }
 
   void setupInteractedMessage() {
+    // Handle messages when the app is opened via a notification
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       if (kDebugMode) {
         print('Message clicked! ${message.messageId}');
       }
     });
-  }
-
-  // The method to show notification
-  Future<void> _showNotification(RemoteNotification notification) async {
-    const AndroidNotificationDetails androidDetails =
-        AndroidNotificationDetails(
-      'high_importance_channel',
-      'High Importance Notifications',
-      importance: Importance.max,
-      priority: Priority.high,
-      playSound: true,
-    );
-    const NotificationDetails platformDetails =
-        NotificationDetails(android: androidDetails);
-
-    await flutterLocalNotificationsPlugin.show(
-      notification.hashCode,
-      notification.title,
-      notification.body,
-      platformDetails,
-    );
   }
 
   // Request notification permission

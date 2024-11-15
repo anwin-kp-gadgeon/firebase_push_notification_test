@@ -1,3 +1,4 @@
+// This class represents a notification model with a title and a body
 class NotificationModel {
   final String title;
   final String body;
