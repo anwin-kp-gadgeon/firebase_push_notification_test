@@ -1,6 +1,4 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,20 +12,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Initializes Firebase
   await Firebase.initializeApp();
-  // Gets an instance of Firebase Messaging
-  FirebaseMessaging messaging = FirebaseMessaging.instance;
 
   // Initialize the notification service
   NotificationService notificationService = NotificationService();
   await notificationService.initialize();
-
-  // Get and print the FCM token
-  String? token = await messaging.getToken();
-
-  if (kDebugMode) {
-    // Prints the FCM token in debug mode
-    print('FCM Token: $token');
-  }
 
   // Runs the application
   runApp(const MyApp());
